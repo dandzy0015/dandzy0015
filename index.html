@@ -1,125 +1,164 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Profil & Pengantar Hosting</title>
-  <style>
-    body {
-      background-color: #0a0a0a;
-      color: #e0f7ff;
-      font-family: Arial, sans-serif;
-      padding: 30px;
-    }
-
-    h1, h2, h3 {
-      color: #82d4f7;
-      text-align: center;
-    }
-
-    .container {
-      display: flex;
-      gap: 50px;
-      flex-wrap: wrap;
-    }
-
-    .profil-section, .hosting-section {
-      background-color: #1a1a1a;
-      border: 2px solid #82d4f7;
-      border-radius: 10px;
-      padding: 20px;
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .biodata p {
-      margin: 10px 0;
-      font-size: 16px;
-    }
-
-    .highlight {
-      color: #82d4f7;
-      font-weight: bold;
-    }
-
-    .photo-frame {
-      margin-top: 20px;
-      border: 3px dashed #82d4f7;
-      width: 250px;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #82d4f7;
-      font-weight: bold;
-    }
-
-    .hosting-section img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin: 10px 0;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 5px;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profil dan Materi Hosting Lengkap</title>
+    <style>
+        body {
+            background-color: #000000; /* hitam */
+            color: #add8e6; /* biru muda */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #87cefa; /* biru muda terang */
+            text-align: center;
+        }
+        .profile, .materi, .ilustrasi {
+            border: 1px solid #add8e6;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+        label {
+            font-weight: bold;
+        }
+        img.foto {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid #87cefa;
+            display: block;
+            margin-top: 10px;
+        }
+        table.hosting-types {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table.hosting-types th, table.hosting-types td {
+            border: 1px solid #87cefa;
+            padding: 8px;
+            text-align: left;
+        }
+        table.hosting-types th {
+            background-color: #1e90ff;
+            color: #000;
+        }
+        .ilustrasi img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 2px solid #87cefa;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        button {
+            background-color: #1e90ff;
+            border: none;
+            color: #000;
+            font-weight: bold;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #63b3ed;
+        }
+    </style>
 </head>
 <body>
+    <section class="profile">
+        <h1>Profil</h1>
+        <p><label>Nama:</label> Budi Santoso</p>
+        <p><label>Kelas:</label> XII IPA 3</p>
+        <p><label>Sekolah:</label> SMA Negeri 1 Jakarta</p>
+        <p><label>Tanggal Lahir:</label> 10 Januari 2007</p>
+        <p><label>Hobi:</label> Membaca, Bermain Bola</p>
+        <p><label>Cita-cita:</label> Insinyur Teknologi</p>
+        <p><label>Akun Instagram:</label> @budi.santoso</p>
+        <label>Foto:</label>
+        <img src="foto" src="FOTO HOSTING.jpeg"/>
+    </section>
 
-  <h1>Profil Pribadi</h1>
-  <div class="container">
-    <div class="profil-section">
-      <div class="biodata">
-        <p><span class="highlight">Nama:</span> Daniel Prasetyo Deswanto</p>
-        <p><scan class="highlight">Kelas:</span> XII TKJ D</p>
-        <p><scan class="highlight">Sekolah:</span> SMK 3 Perguruan Cikini</p>
-        <p><scan class="highlight">Tanggal Lahir:</span> 15 Oktober 2007</p>
-        <p><span class="highlight">Alamat:</span> Komplek Kavling DKI JL.Purwa 8 Blok Y No.15</p>
-        <p><span class="highlight">Cita-cita:</span> Ahli Komputer, Player Esport</p>
-        <p><span class="highlight">Hobi:</span> Bermain Bulu Tangkis</p>
-        <p><span class="highlight">Akun Instagram:</span> @whynotfine_</p>
-        <p><span class="highlight">Status:</span> Single</p>
-      <div>
+    <section class="materi">
+        <h2>Pengantar Hosting</h2>
+        <p>Hosting adalah layanan penyimpanan online yang memungkinkan website atau aplikasi dapat diakses melalui internet kapan saja. Saat Anda membeli hosting, Anda sebenarnya menyewa ruang di server fisik untuk menyimpan data website Anda.</p>
+        <p>Web server adalah komputer yang terus menyala dan terhubung dengan internet agar website Anda tetap online. Hosting juga mengelola keamanan data dan memastikan file seperti gambar, teks, video, dan script dapat diakses oleh pengunjung.</p>
+        <p>Secara teknis, saat pengunjung mengetik alamat website Anda, browser mereka mengirimkan permintaan ke server hosting, kemudian server mengirimkan file website ke browser agar tampilan web dapat diakses pengguna.</p>
+        <p>Metode hosting sendiri tanpa penyedia layanan hosting memerlukan keterampilan teknis yang tinggi serta peralatan dan pemeliharaan server secara mandiri.</p>
 
-      <div class="photo-frame">
-       <img src="Instagram.jpg"/>
-      </div>
-    </div>
+        <h2>Jenis-Jenis Hosting</h2>
+        <table class="hosting-types">
+            <thead>
+                <tr>
+                    <th>Jenis Hosting</th>
+                    <th>Penjelasan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Shared Hosting</td>
+                    <td>Beberapa situs web berbagi sumber daya pada satu server fisik. Hemat biaya dan cocok untuk website dengan trafik rendah sampai menengah. Risiko performa menurun jika salah satu website mendapat lonjakan trafik.</td>
+                </tr>
+                <tr>
+                    <td>VPS Hosting</td>
+                    <td>Server fisik yang dibagi menjadi beberapa lingkungan virtual yang terisolasi. Masing-masing lingkungan punya sumber daya khusus (CPU, RAM, storage) sehingga memberikan kontrol dan performa lebih baik dari shared hosting.</td>
+                </tr>
+                <tr>
+                    <td>Dedicated Hosting</td>
+                    <td>Memiliki satu server fisik khusus hanya untuk satu pengguna. Memberikan performa dan keamanan maksimal, cocok untuk website raksasa dengan trafik tinggi.</td>
+                </tr>
+                <tr>
+                    <td>Cloud Hosting</td>
+                    <td>Hosting menggunakan beberapa server cloud yang bekerja bersama. Skalabilitas tinggi, tahan gangguan, dan biaya penggunaan bisa disesuaikan dengan kebutuhan.</td>
+                </tr>
+                <tr>
+                    <td>Reseller Hosting</td>
+                    <td>Memungkinkan pengguna menyewakan kembali kapasitas hosting kepada pihak lain, seperti bisnis reseller domain atau hosting.</td>
+                </tr>
+                <tr>
+                    <td>WordPress Hosting</td>
+                    <td>Hosting yang dioptimasi khusus untuk website WordPress, dengan fitur keamanan, kecepatan, dan kemudahan pengelolaan untuk pengguna WordPress.</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <div class="hosting-section">
-      <h2>📡 Rangkuman Materi: Pengantar Hosting</h2>
+        <h2>Cara Kerja Hosting</h2>
+        <ul>
+            <li>File website (seperti gambar, video, database) disimpan di server hosting.</li>
+            <li>Pengunjung mengetik alamat domain di browser.</li>
+            <li>Permintaan pengaksesan dikirim ke server hosting.</li>
+            <li>Server mengirimkan file website ke browser pengunjung.</li>
+            <li>Website ditampilkan pada browser pengunjung.</li>
+        </ul>
 
-      <p><strong>Hosting</strong> adalah layanan yang digunakan untuk menyimpan data atau file website agar dapat diakses melalui internet kapan saja dan dari mana saja.</p>
+        <h2>Aplikasi Hosting</h2>
+        <p>Aplikasi hosting adalah platform atau layanan penyedia hosting yang memberikan kemudahan dalam pengelolaan website dan server. Contoh populer:</p>
+        <ul>
+            <li><strong>Hostinger:</strong> Hosting murah dan mudah digunakan untuk berbagai kebutuhan.</li>
+            <li><strong>Firebase Hosting:</strong> Hosting cepat dan aman dari Google, cocok untuk aplikasi web modern.</li>
+            <li><strong>Back4app:</strong> Platform hosting aplikasi cloud dengan backend-as-a-service untuk pengembang.</li>
+            <li><strong>Heroku:</strong> Platform cloud untuk menghosting aplikasi dengan kemudahan deployment.</li>
+            <li><strong>Amazon Web Services (AWS):</strong> Layanan cloud hosting skala besar dengan banyak fitur untuk bisnis dan aplikasi kompleks.</li>
+        </ul>
+        <p>Platform-platform ini membantu pengguna mengonlinekan web dan aplikasi tanpa harus khawatir soal infrastruktur server secara teknis.</p>
+    </section>
 
-      <h3>🧩 Jenis-jenis Hosting</h3>
-      <ul>
-        <li><strong>1. Shared Hosting:</strong> Beberapa website berbagi satu server. Cocok untuk pemula dan website kecil.</li>
-        <li><strong>2. VPS (Virtual Private Server):</strong> Server virtual yang memiliki sumber daya sendiri. Lebih stabil dan fleksibel daripada shared hosting.</li>
-        <li><strong>3. Cloud Hosting:</strong> Menggunakan beberapa server virtual sekaligus. Lebih stabil dan bisa menyesuaikan kapasitas otomatis.</li>
-        <li><strong>4. Dedicated Hosting:</strong> Menyewa satu server fisik penuh. Performa maksimal dan cocok untuk website besar.</li>
-        <li><strong>5. WordPress Hosting:</strong> Hosting yang dioptimalkan khusus untuk website berbasis WordPress.</li>
-        <li><strong>6. Reseller Hosting:</strong> Hosting yang digunakan untuk dijual kembali ke pihak lain. Cocok untuk yang ingin bisnis hosting.</li>
-      </ul>
+    <section class="ilustrasi">
+        <h2>Ilustrasi Hosting</h2>
+        <img src="FOTO HOSTING.png">
+        <p>Server hosting menjadi tempat menyimpan data aplikasi atau website untuk disajikan ke pengguna internet. Saat pengunjung mengakses alamat website, server mengirimkan konten yang disimpan agar website dapat ditampilkan di browser.</p>
+    </section>
 
-      <h3>⚙️ Aplikasi Hosting yang Umum Digunakan</h3>
-      <ul>
-        <li><strong>1. cPanel:</strong> Panel kontrol hosting paling populer untuk mengelola website, database, email, dan lainnya.</li>
-        <li><strong>2. Plesk:</strong> Alternatif dari cPanel, sering digunakan di server Windows maupun Linux.</li>
-        <li><strong>3. Webmin:</strong> Tool open-source untuk administrasi sistem berbasis web.</li>
-        <li><strong>4. CyberPanel:</strong> Panel modern berbasis OpenLiteSpeed, ringan dan cepat.</li>
-        <li><strong>5. DirectAdmin:</strong> Panel hosting yang ringan dan hemat sumber daya server.</li>
-      </ul>
-
-      <h3>📷 Ilustrasi Hosting</h3>
-      <img src="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2021/10/what-is-web-hosting.webp" alt="Ilustrasi Hosting">
-
-      <p>Dengan memahami jenis-jenis hosting dan aplikasinya, kita bisa memilih layanan terbaik sesuai kebutuhan website kita.</p>
-    </div>
-  </div>
-
+    <script>
+        function showProfileInfo() {
+            alert("Nama: Budi Santoso\nKelas: XII IPA 3\nSekolah: SMA Negeri 1 Jakarta\nHobi: Membaca, Bermain Bola\nCita-cita: Insinyur Teknologi");
+        }
+    </script>
 </body>
 </html>
