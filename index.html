@@ -1,169 +1,536 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Profil dan Materi Hosting Lengkap</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil & Materi Hosting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Reset dan Styling Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
         body {
-            background-color: #000000; /* hitam */
-            color: #add8e6; /* biru muda */
-            font-family: Arial, sans-serif;
-            padding: 20px;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
             line-height: 1.6;
         }
-        h1, h2 {
-            color: #87cefa; /* biru muda terang */
+        
+        /* Container Utama */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            border-bottom: 2px solid #00a8ff;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #00a8ff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 168, 255, 0.3);
+        }
+        
+        .subtitle {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+        }
+        
+        /* Layout Utama */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        /* Bagian Profil */
+        .profile-section {
+            flex: 1;
+            min-width: 300px;
+            background: #1a1a2e;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .profile-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 168, 255, 0.2);
+        }
+        
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #00a8ff;
+            padding-bottom: 15px;
+        }
+        
+        .photo-container {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00a8ff;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+        
+        .upload-btn {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: #00a8ff;
+            color: #0a0a0a;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-btn:hover {
+            background: #0097e6;
+            transform: scale(1.1);
+        }
+        
+        .profile-info {
             text-align: center;
         }
-        .profile, .materi, .ilustrasi {
-            border: 1px solid #add8e6;
-            padding: 15px;
+        
+        .profile-info h2 {
+            color: #00a8ff;
+            margin-bottom: 5px;
+        }
+        
+        .profile-details {
+            margin-top: 20px;
+        }
+        
+        .detail-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(0, 168, 255, 0.1);
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .detail-item:hover {
+            background: rgba(0, 168, 255, 0.2);
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            color: #00a8ff;
+        }
+        
+        .instagram-link {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .instagram-link:hover {
+            color: #00a8ff;
+            text-decoration: underline;
+        }
+        
+        /* Bagian Materi Hosting */
+        .hosting-section {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .section-title {
+            color: #00a8ff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00a8ff;
+        }
+        
+        /* Materi Hosting */
+        .hosting-topic {
+            background: #1a1a2e;
+            border-radius: 10px;
+            padding: 25px;
             margin-bottom: 25px;
-            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
         }
-        label {
-            font-weight: bold;
+        
+        .hosting-topic:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 168, 255, 0.2);
         }
-        img.foto {
-            width: 150px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-            border: 2px solid #87cefa;
-            display: block;
-            margin-top: 10px;
+        
+        .topic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
         }
-        table.hosting-types {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
+        
+        .topic-title {
+            color: #00a8ff;
+            font-size: 1.5rem;
         }
-        table.hosting-types th, table.hosting-types td {
-            border: 1px solid #87cefa;
-            padding: 8px;
-            text-align: left;
-        }
-        table.hosting-types th {
-            background-color: #1e90ff;
-            color: #000;
-        }
-        .ilustrasi img {
-            max-width: 100%;
-            border-radius: 8px;
-            border: 2px solid #87cefa;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        button {
-            background-color: #1e90ff;
+        
+        .action-btn {
+            background: #00a8ff;
+            color: #0a0a0a;
             border: none;
-            color: #000;
-            font-weight: bold;
-            padding: 10px 15px;
-            cursor: pointer;
+            padding: 8px 15px;
             border-radius: 5px;
-            margin-top: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
         }
-        button:hover {
-            background-color: #63b3ed;
+        
+        .action-btn:hover {
+            background: #0097e6;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 168, 255, 0.5);
+        }
+        
+        .topic-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .topic-content.active {
+            max-height: 1000px;
+        }
+        
+        .hosting-type {
+            background: rgba(0, 168, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            transition: background 0.3s ease;
+        }
+        
+        .hosting-type:hover {
+            background: rgba(0, 168, 255, 0.2);
+        }
+        
+        .type-title {
+            color: #00a8ff;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .app-list {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        .app-list li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .app-list li:before {
+            content: "▸";
+            color: #00a8ff;
+            position: absolute;
+            left: -15px;
+        }
+        
+        /* Ilustrasi Hosting */
+        .hosting-illustration {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .server-box {
+            width: 150px;
+            height: 100px;
+            background: linear-gradient(135deg, #00a8ff, #0097e6);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #0a0a0a;
+            font-weight: bold;
+            margin: 0 20px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .server-box:hover {
+            transform: scale(1.1);
+        }
+        
+        .connection {
+            width: 50px;
+            height: 5px;
+            background: #00a8ff;
+            position: relative;
+        }
+        
+        .connection:before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #00a8ff;
+            border-radius: 50%;
+            top: -2.5px;
+            left: -5px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a1a2e;
+            border-top: 2px solid #00a8ff;
+            margin-top: 40px;
+        }
+        
+        /* Responsif */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .hosting-illustration {
+                flex-direction: column;
+            }
+            
+            .connection {
+                width: 5px;
+                height: 50px;
+            }
+            
+            .connection:before {
+                top: -5px;
+                left: -2.5px;
+            }
         }
     </style>
 </head>
 <body>
-    <section class="profile">
-        <h1>Profil</h1>
-        <p><label>Nama:</label> Daniel Prasetyo Deswanto</p>
-        <p><label>Kelas:</label> XII TKJ D</p>
-        <p><label>Sekolah:</label> SMK 3 PERGURUAN CIKINI</p>
-        <p><label>Tanggal Lahir:</label> 15 Oktober 2007</p>
-        <p><label>Hobi:</label> Bermain Bulu Tangkis,Bermain Game</p>
-        <p><label>Cita-cita:</label> Ahli Komputer,Pro Player Esport</p>
-        <p><label>Akun Instagram:</label> @whynotfine_</p>
-        <img src="FOTO ICON.jpg" width="450" height="500">
-    </section>
-
-    <section class="materi">
-        <h2>Pengantar Hosting</h2>
-        <p>Hosting adalah layanan penyimpanan online yang memungkinkan website atau aplikasi dapat diakses melalui internet kapan saja. Saat Anda membeli hosting, Anda sebenarnya menyewa ruang di server fisik untuk menyimpan data website Anda.</p>
-        <p>Web server adalah komputer yang terus menyala dan terhubung dengan internet agar website Anda tetap online. Hosting juga mengelola keamanan data dan memastikan file seperti gambar, teks, video, dan script dapat diakses oleh pengunjung.</p>
-        <p>Secara teknis, saat pengunjung mengetik alamat website Anda, browser mereka mengirimkan permintaan ke server hosting, kemudian server mengirimkan file website ke browser agar tampilan web dapat diakses pengguna.</p>
-        <p>Metode hosting sendiri tanpa penyedia layanan hosting memerlukan keterampilan teknis yang tinggi serta peralatan dan pemeliharaan server secara mandiri.</p>
-
-        <h2>Jenis-Jenis Hosting</h2>
-        <table class="hosting-types">
-            <thead>
-                <tr>
-                    <th>Jenis Hosting</th>
-                    <th>Penjelasan</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Shared Hosting</td>
-                    <td>Beberapa situs web berbagi sumber daya pada satu server fisik. Hemat biaya dan cocok untuk website dengan trafik rendah sampai menengah. Risiko performa menurun jika salah satu website mendapat lonjakan trafik.</td>
-                </tr>
-                <tr>
-                    <td>VPS Hosting</td>
-                    <td>Server fisik yang dibagi menjadi beberapa lingkungan virtual yang terisolasi. Masing-masing lingkungan punya sumber daya khusus (CPU, RAM, storage) sehingga memberikan kontrol dan performa lebih baik dari shared hosting.</td>
-                </tr>
-                <tr>
-                    <td>Dedicated Hosting</td>
-                    <td>Memiliki satu server fisik khusus hanya untuk satu pengguna. Memberikan performa dan keamanan maksimal, cocok untuk website raksasa dengan trafik tinggi.</td>
-                </tr>
-                <tr>
-                    <td>Cloud Hosting</td>
-                    <td>Hosting menggunakan beberapa server cloud yang bekerja bersama. Skalabilitas tinggi, tahan gangguan, dan biaya penggunaan bisa disesuaikan dengan kebutuhan.</td>
-                </tr>
-                <tr>
-                    <td>Reseller Hosting</td>
-                    <td>Memungkinkan pengguna menyewakan kembali kapasitas hosting kepada pihak lain, seperti bisnis reseller domain atau hosting.</td>
-                </tr>
-                <tr>
-                    <td>WordPress Hosting</td>
-                    <td>Hosting yang dioptimasi khusus untuk website WordPress, dengan fitur keamanan, kecepatan, dan kemudahan pengelolaan untuk pengguna WordPress.</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>Cara Kerja Hosting</h2>
-        <ul>
-            <li>File website (seperti gambar, video, database) disimpan di server hosting.</li>
-            <li>Pengunjung mengetik alamat domain di browser.</li>
-            <li>Permintaan pengaksesan dikirim ke server hosting.</li>
-            <li>Server mengirimkan file website ke browser pengunjung.</li>
-            <li>Website ditampilkan pada browser pengunjung.</li>
-        </ul>
-
-        <h2>Aplikasi Hosting</h2>
-        <p>Aplikasi hosting adalah platform atau layanan penyedia hosting yang memberikan kemudahan dalam pengelolaan website dan server. Contoh populer:</p>
-        <ul>
-            <li><strong>Hostinger:</strong> Hosting murah dan mudah digunakan untuk berbagai kebutuhan.</li>
-            <li><strong>Firebase Hosting:</strong> Hosting cepat dan aman dari Google, cocok untuk aplikasi web modern.</li>
-            <li><strong>Back4app:</strong> Platform hosting aplikasi cloud dengan backend-as-a-service untuk pengembang.</li>
-            <li><strong>Heroku:</strong> Platform cloud untuk menghosting aplikasi dengan kemudahan deployment.</li>
-            <li><strong>Amazon Web Services (AWS):</strong> Layanan cloud hosting skala besar dengan banyak fitur untuk bisnis dan aplikasi kompleks.</li>
-        </ul>
-        <p>Platform-platform ini membantu pengguna mengonlinekan web dan aplikasi tanpa harus khawatir soal infrastruktur server secara teknis.</p>
-    </section>
-
-    <section class="ilustrasi">
-        <h2>Ilustrasi Hosting</h2>
-        <img src="FOTO HOSTING.jpg" width="450" height="500">
-        <p>Server hosting menjadi tempat menyimpan data aplikasi atau website untuk disajikan ke pengguna internet. Saat pengunjung mengakses alamat website, server mengirimkan konten yang disimpan agar website dapat ditampilkan di browser.</p>
-    </section>
-
+    <header>
+        <div class="container">
+            <h1>Profil & Materi Hosting</h1>
+            <p class="subtitle">Tugas ASJ(Administrasi Sistem Jaringan)</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <!-- Bagian Profil -->
+            <section class="profile-section">
+                <div class="profile-header">
+                    <div class="photo-container">
+                        <img src="FOTO ASLI." alt="Foto Profil" class="profile-photo" id="profilePhoto">
+                        <button class="upload-btn" id="uploadBtn">+</button>
+                        <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                    </div>
+                    <div class="profile-info">
+                        <h2 id="profileName"></h2>
+                        <p id="profileClassSchool"></p>
+                    </div>
+                </div>
+                
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Nama:</span> <span id="detailName">Daniel Prasetyo Deswanto</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Kelas:</span> <span id="detailClass">XII TKJ D</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Sekolah:</span> <span id="detailSchool">SMK 3 Perguruan Cikini</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Tanggal Lahir:</span> <span id="detailBirth">15 Oktober 2007</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Hobi:</span> <span id="detailHobby">Jalan-jalan,Bermain game,Bermain bulu tangkis</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Cita-cita:</span> <span id="detailGoal">Ahli komputer,Pro Player Esport</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Instagram:</span> 
+                        <a href="https://www.instagram.com/whynotfine_/" target="_blank" class="instagram-link">
+                            @whynotfine_
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Bagian Materi Hosting -->
+            <section class="hosting-section">
+                <h2 class="section-title">Materi Hosting Website</h2>
+                
+                <!-- Pengantar Hosting -->
+                <div class="hosting-topic">
+                    <div class="topic-header">
+                        <h3 class="topic-title">Pengantar Hosting</h3>
+                        <button class="action-btn" onclick="toggleContent('pengantar')">Baca</button>
+                    </div>
+                    <div class="topic-content" id="pengantar">
+                        <p>Hosting adalah layanan yang memungkinkan individu dan organisasi untuk membuat situs web mereka dapat diakses melalui internet. Layanan hosting menyediakan server tempat file website disimpan dan dikelola.</p>
+                        <p>Ketika seseorang mengetik alamat website di browser, browser akan terhubung ke server hosting dan menampilkan halaman website yang diminta.</p>
+                        <p>Hosting adalah komponen penting dalam membuat website karena tanpa hosting, website tidak akan bisa diakses oleh pengguna internet di seluruh dunia.</p>
+                    </div>
+                </div>
+                
+                <!-- Jenis-jenis Hosting -->
+                <div class="hosting-topic">
+                    <div class="topic-header">
+                        <h3 class="topic-title">Jenis-jenis Hosting</h3>
+                        <button class="action-btn" onclick="toggleContent('jenis')">Baca</button>
+                    </div>
+                    <div class="topic-content" id="jenis">
+                        <div class="hosting-type">
+                            <h4 class="type-title">Shared Hosting</h4>
+                            <p>Shared hosting adalah jenis hosting di mana beberapa website berbagi sumber daya server yang sama. Ini adalah pilihan yang paling terjangkau untuk website kecil dengan traffic rendah.</p>
+                        </div>
+                        
+                        <div class="hosting-type">
+                            <h4 class="type-title">VPS Hosting</h4>
+                            <p>Virtual Private Server (VPS) hosting membagi server fisik menjadi beberapa server virtual. Setiap VPS memiliki sumber daya yang dijamin dan dapat dikonfigurasi secara independen.</p>
+                        </div>
+                        
+                        <div class="hosting-type">
+                            <h4 class="type-title">Dedicated Hosting</h4>
+                            <p>Dedicated hosting menyediakan server fisik lengkap untuk satu pelanggan. Ini memberikan kontrol penuh atas server dan sumber dayanya, cocok untuk website dengan traffic tinggi.</p>
+                        </div>
+                        
+                        <div class="hosting-type">
+                            <h4 class="type-title">Cloud Hosting</h4>
+                            <p>Cloud hosting menggunakan jaringan server yang saling terhubung untuk meng-host website. Ini menawarkan skalabilitas tinggi dan keandalan karena sumber daya dapat disesuaikan sesuai kebutuhan.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Aplikasi Hosting -->
+                <div class="hosting-topic">
+                    <div class="topic-header">
+                        <h3 class="topic-title">Aplikasi Hosting</h3>
+                        <button class="action-btn" onclick="toggleContent('aplikasi')">Baca</button>
+                    </div>
+                    <div class="topic-content" id="aplikasi">
+                        <p>Berikut adalah beberapa aplikasi dan platform hosting populer:</p>
+                        <ul class="app-list">
+                            <li><strong>cPanel:</strong> Panel kontrol hosting yang paling populer untuk mengelola website</li>
+                            <li><strong>Plesk:</strong> Alternatif panel kontrol hosting dengan antarmuka yang user-friendly</li>
+                            <li><strong>WordPress:</strong> Sistem manajemen konten yang banyak digunakan dengan dukungan hosting yang luas</li>
+                            <li><strong>FileZilla:</strong> Aplikasi FTP untuk mentransfer file antara komputer dan server hosting</li>
+                            <li><strong>phpMyAdmin:</strong> Tool berbasis web untuk mengelola database MySQL</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Ilustrasi Hosting -->
+                <div class="hosting-topic">
+                    <div class="topic-header">
+                        <h3 class="topic-title">Ilustrasi Hosting</h3>
+                        <button class="action-btn" onclick="toggleContent('ilustrasi')">Lihat</button>
+                    </div>
+                    <div class="topic-content" id="ilustrasi">
+                        <p>Berikut adalah ilustrasi sederhana bagaimana hosting bekerja:</p>
+                        <div class="hosting-illustration">
+                            <div class="server-box">Website Files</div>
+                            <div class="connection"></div>
+                            <div class="server-box">Hosting Server</div>
+                            <div class="connection"></div>
+                            <div class="server-box">Internet</div>
+                        </div>
+                        <p>File website disimpan di server hosting. Ketika pengguna mengakses website melalui browser, permintaan dikirim ke server hosting, yang kemudian mengirimkan file website kembali ke browser pengguna.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Profil & Materi Hosting. Dibuat dengan ❤️ untuk pembelajaran.</p>
+        </div>
+    </footer>
+    
     <script>
-        function showProfileInfo() {
-            alert("Nama: Budi Santoso\nKelas: XII IPA 3\nSekolah: SMA Negeri 1 Jakarta\nHobi: Membaca, Bermain Bola\nCita-cita: Insinyur Teknologi");
+        // Fungsi untuk toggle konten
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('active');
+            
+            // Mengubah teks tombol
+            const button = content.previousElementSibling.querySelector('.action-btn');
+            if (content.classList.contains('active')) {
+                button.textContent = 'Tutup';
+            } else {
+                button.textContent = 'Baca';
+            }
         }
+        
+        // Fungsi untuk upload foto
+        document.getElementById('uploadBtn').addEventListener('click', function() {
+            document.getElementById('photoUpload').click();
+        });
+        
+        document.getElementById('photoUpload').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    document.getElementById('profilePhoto').src = e.target.result;
+                }
+                
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+        
+        // Membuka konten pertama secara default
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleContent('pengantar');
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
-
