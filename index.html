@@ -3,534 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil & Materi Hosting</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Tugas Dedicated Server - 5 Centimeters per Second</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* Reset dan Styling Dasar */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
+        /* Latar Belakang Gradien Langit Senja Shinkai */
         body {
-            background-color: #0a0a0a;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom, #1a1a2e, #2b1055, #7597de, #efa8b0, #f5cb5c);
+            background-attachment: fixed;
             color: #e0e0e0;
             line-height: 1.6;
-        }
-        
-        /* Container Utama */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 20px;
         }
-        
-        /* Header */
-        header {
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: rgba(20, 20, 35, 0.8);
+            backdrop-filter: blur(8px);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- BAGIAN IDENTITAS SISWA --- */
+        .student-identity {
             text-align: center;
-            padding: 40px 0;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-            border-bottom: 2px solid #00a8ff;
             margin-bottom: 30px;
-        }
-        
-        h1 {
-            color: #00a8ff;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(0, 168, 255, 0.3);
-        }
-        
-        .subtitle {
-            color: #b0b0b0;
-            font-size: 1.2rem;
-        }
-        
-        /* Layout Utama */
-        .main-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        /* Bagian Profil */
-        .profile-section {
-            flex: 1;
-            min-width: 300px;
-            background: #1a1a2e;
+            padding: 15px;
+            border-bottom: 2px dashed rgba(239, 168, 176, 0.3);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
-        .profile-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 168, 255, 0.2);
+
+        .student-identity p {
+            margin: 2px 0;
+            font-size: 0.95em;
+            color: #f5cb5c; /* Warna kuning langit */
+            font-weight: 600;
         }
-        
-        .profile-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #00a8ff;
-            padding-bottom: 15px;
-        }
-        
-        .photo-container {
-            position: relative;
-            margin-bottom: 15px;
-        }
-        
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #00a8ff;
-            transition: transform 0.3s ease;
-        }
-        
-        .profile-photo:hover {
-            transform: scale(1.05);
-        }
-        
-        .upload-btn {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            background: #00a8ff;
-            color: #0a0a0a;
-            border: none;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .upload-btn:hover {
-            background: #0097e6;
-            transform: scale(1.1);
-        }
-        
-        .profile-info {
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            color: #ffdde1;
             text-align: center;
-        }
-        
-        .profile-info h2 {
-            color: #00a8ff;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
             margin-bottom: 5px;
         }
-        
-        .profile-details {
-            margin-top: 20px;
+
+        .tagline {
+            display: block;
+            text-align: center;
+            font-size: 0.9em;
+            font-style: italic;
+            color: #efa8b0;
+            margin-bottom: 30px;
         }
-        
-        .detail-item {
-            margin-bottom: 15px;
-            padding: 10px;
-            background: rgba(0, 168, 255, 0.1);
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-        
-        .detail-item:hover {
-            background: rgba(0, 168, 255, 0.2);
-        }
-        
-        .detail-label {
-            font-weight: bold;
-            color: #00a8ff;
-        }
-        
-        .instagram-link {
-            color: #e0e0e0;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .instagram-link:hover {
-            color: #00a8ff;
-            text-decoration: underline;
-        }
-        
-        /* Bagian Materi Hosting */
-        .hosting-section {
-            flex: 2;
-            min-width: 300px;
-        }
-        
-        .section-title {
-            color: #00a8ff;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #00a8ff;
-        }
-        
-        /* Materi Hosting */
-        .hosting-topic {
-            background: #1a1a2e;
+
+        .header-image {
+            width: 100%;
+            height: 350px;
+            background-image: url('https://ftnews.co.id/storage/comp/5-centimeters-per-second-2-010120263.webp'); /* Pastikan file ada di folder yang sama */
+            background-color: #2b1055; /* Fallback jika gambar tidak ada */
+            background-size: cover;
+            background-position: center;
             border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Merriweather', serif;
+            color: #efa8b0;
+            border-left: 5px solid #f5cb5c;
+            padding-left: 15px;
+            margin: 30px 0 20px 0;
+        }
+
+        /* Grid Tokoh */
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .char-card {
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 10px;
             overflow: hidden;
-            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        .hosting-topic:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 168, 255, 0.2);
+
+        .char-img-container img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
-        
-        .topic-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .topic-title {
-            color: #00a8ff;
-            font-size: 1.5rem;
-        }
-        
-        .action-btn {
-            background: #00a8ff;
-            color: #0a0a0a;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .action-btn:hover {
-            background: #0097e6;
-            transform: scale(1.05);
-            box-shadow: 0 0 10px rgba(0, 168, 255, 0.5);
-        }
-        
-        .topic-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-        }
-        
-        .topic-content.active {
-            max-height: 1000px;
-        }
-        
-        .hosting-type {
-            background: rgba(0, 168, 255, 0.1);
+
+        .char-info {
             padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            transition: background 0.3s ease;
         }
-        
-        .hosting-type:hover {
-            background: rgba(0, 168, 255, 0.2);
+
+        .char-info h3 {
+            color: #f5cb5c;
+            margin-bottom: 10px;
         }
-        
-        .type-title {
-            color: #00a8ff;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        
-        .app-list {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-        
-        .app-list li {
-            margin-bottom: 8px;
-            position: relative;
-        }
-        
-        .app-list li:before {
-            content: "▸";
-            color: #00a8ff;
-            position: absolute;
-            left: -15px;
-        }
-        
-        /* Ilustrasi Hosting */
-        .hosting-illustration {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-        }
-        
-        .server-box {
-            width: 150px;
-            height: 100px;
-            background: linear-gradient(135deg, #00a8ff, #0097e6);
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #0a0a0a;
-            font-weight: bold;
-            margin: 0 20px;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-        
-        .server-box:hover {
-            transform: scale(1.1);
-        }
-        
-        .connection {
-            width: 50px;
-            height: 5px;
-            background: #00a8ff;
-            position: relative;
-        }
-        
-        .connection:before {
-            content: "";
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #00a8ff;
-            border-radius: 50%;
-            top: -2.5px;
-            left: -5px;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-        
-        /* Footer */
+
         footer {
             text-align: center;
-            padding: 20px;
-            background: #1a1a2e;
-            border-top: 2px solid #00a8ff;
             margin-top: 40px;
-        }
-        
-        /* Responsif */
-        @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
-            
-            .hosting-illustration {
-                flex-direction: column;
-            }
-            
-            .connection {
-                width: 5px;
-                height: 50px;
-            }
-            
-            .connection:before {
-                top: -5px;
-                left: -2.5px;
-            }
+            font-size: 0.8em;
+            color: #888;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Profil & Materi Hosting</h1>
-            <p class="subtitle">Tugas ASJ(Administrasi Sistem Jaringan)</p>
-        </div>
-    </header>
-    
+
     <div class="container">
-        <div class="main-content">
-            <!-- Bagian Profil -->
-            <section class="profile-section">
-                <div class="profile-header">
-                    <div class="photo-container">
-                        <img src="FOTO ASLI." alt="Foto Profil" class="profile-photo" id="profilePhoto">
-                        <button class="upload-btn" id="uploadBtn">+</button>
-                        <input type="file" id="photoUpload" accept="image/*" style="display: none;">
-                    </div>
-                    <div class="profile-info">
-                        <h2 id="profileName"></h2>
-                        <p id="profileClassSchool"></p>
-                    </div>
-                </div>
-                
-                <div class="profile-details">
-                    <div class="detail-item">
-                        <span class="detail-label">Nama:</span> <span id="detailName">Daniel Prasetyo Deswanto</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Kelas:</span> <span id="detailClass">XII TKJ D</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Sekolah:</span> <span id="detailSchool">SMK 3 Perguruan Cikini</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Tanggal Lahir:</span> <span id="detailBirth">15 Oktober 2007</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Hobi:</span> <span id="detailHobby">Jalan-jalan,Bermain game,Bermain bulu tangkis</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Cita-cita:</span> <span id="detailGoal">Ahli komputer,Pro Player Esport</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Instagram:</span> 
-                        <a href="https://www.instagram.com/whynotfine_/" target="_blank" class="instagram-link">
-                            @whynotfine_
-                        </a>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Bagian Materi Hosting -->
-            <section class="hosting-section">
-                <h2 class="section-title">Materi Hosting Website</h2>
-                
-                <!-- Pengantar Hosting -->
-                <div class="hosting-topic">
-                    <div class="topic-header">
-                        <h3 class="topic-title">Pengantar Hosting</h3>
-                        <button class="action-btn" onclick="toggleContent('pengantar')">Baca</button>
-                    </div>
-                    <div class="topic-content" id="pengantar">
-                        <p>Hosting adalah layanan yang memungkinkan individu dan organisasi untuk membuat situs web mereka dapat diakses melalui internet. Layanan hosting menyediakan server tempat file website disimpan dan dikelola.</p>
-                        <p>Ketika seseorang mengetik alamat website di browser, browser akan terhubung ke server hosting dan menampilkan halaman website yang diminta.</p>
-                        <p>Hosting adalah komponen penting dalam membuat website karena tanpa hosting, website tidak akan bisa diakses oleh pengguna internet di seluruh dunia.</p>
-                    </div>
-                </div>
-                
-                <!-- Jenis-jenis Hosting -->
-                <div class="hosting-topic">
-                    <div class="topic-header">
-                        <h3 class="topic-title">Jenis-jenis Hosting</h3>
-                        <button class="action-btn" onclick="toggleContent('jenis')">Baca</button>
-                    </div>
-                    <div class="topic-content" id="jenis">
-                        <div class="hosting-type">
-                            <h4 class="type-title">Shared Hosting</h4>
-                            <p>Shared hosting adalah jenis hosting di mana beberapa website berbagi sumber daya server yang sama. Ini adalah pilihan yang paling terjangkau untuk website kecil dengan traffic rendah.</p>
-                        </div>
-                        
-                        <div class="hosting-type">
-                            <h4 class="type-title">VPS Hosting</h4>
-                            <p>Virtual Private Server (VPS) hosting membagi server fisik menjadi beberapa server virtual. Setiap VPS memiliki sumber daya yang dijamin dan dapat dikonfigurasi secara independen.</p>
-                        </div>
-                        
-                        <div class="hosting-type">
-                            <h4 class="type-title">Dedicated Hosting</h4>
-                            <p>Dedicated hosting menyediakan server fisik lengkap untuk satu pelanggan. Ini memberikan kontrol penuh atas server dan sumber dayanya, cocok untuk website dengan traffic tinggi.</p>
-                        </div>
-                        
-                        <div class="hosting-type">
-                            <h4 class="type-title">Cloud Hosting</h4>
-                            <p>Cloud hosting menggunakan jaringan server yang saling terhubung untuk meng-host website. Ini menawarkan skalabilitas tinggi dan keandalan karena sumber daya dapat disesuaikan sesuai kebutuhan.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Aplikasi Hosting -->
-                <div class="hosting-topic">
-                    <div class="topic-header">
-                        <h3 class="topic-title">Aplikasi Hosting</h3>
-                        <button class="action-btn" onclick="toggleContent('aplikasi')">Baca</button>
-                    </div>
-                    <div class="topic-content" id="aplikasi">
-                        <p>Berikut adalah beberapa aplikasi dan platform hosting populer:</p>
-                        <ul class="app-list">
-                            <li><strong>cPanel:</strong> Panel kontrol hosting yang paling populer untuk mengelola website</li>
-                            <li><strong>Plesk:</strong> Alternatif panel kontrol hosting dengan antarmuka yang user-friendly</li>
-                            <li><strong>WordPress:</strong> Sistem manajemen konten yang banyak digunakan dengan dukungan hosting yang luas</li>
-                            <li><strong>FileZilla:</strong> Aplikasi FTP untuk mentransfer file antara komputer dan server hosting</li>
-                            <li><strong>phpMyAdmin:</strong> Tool berbasis web untuk mengelola database MySQL</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Ilustrasi Hosting -->
-                <div class="hosting-topic">
-                    <div class="topic-header">
-                        <h3 class="topic-title">Ilustrasi Hosting</h3>
-                        <button class="action-btn" onclick="toggleContent('ilustrasi')">Lihat</button>
-                    </div>
-                    <div class="topic-content" id="ilustrasi">
-                        <p>Berikut adalah ilustrasi sederhana bagaimana hosting bekerja:</p>
-                        <div class="hosting-illustration">
-                            <div class="server-box">Website Files</div>
-                            <div class="connection"></div>
-                            <div class="server-box">Hosting Server</div>
-                            <div class="connection"></div>
-                            <div class="server-box">Internet</div>
-                        </div>
-                        <p>File website disimpan di server hosting. Ketika pengguna mengakses website melalui browser, permintaan dikirim ke server hosting, yang kemudian mengirimkan file website kembali ke browser pengguna.</p>
-                    </div>
-                </div>
-            </section>
+        <div class="student-identity">
+            <p>Nama: Daniel Prasetyo Deswanto</p>
+            <p>Kelas: XII TKJ D | No. Absen: 6</p>
         </div>
+
+        <header>
+            <h1>5 Centimeters per Second</h1>
+            <span class="tagline">"Kecepatan jatuhnya kelopak bunga sakura..."</span>
+        </header>
+
+        <div class="header-image"></div>
+
+        <section id="penjelasan">
+            <h2>Sinopsis Singkat</h2>
+            <p>
+                Film ini adalah mahakarya Makoto Shinkai yang menceritakan tentang <strong>Takaki Toono</strong> dan <strong>Akari Shinohara</strong>. Kisahnya terbagi menjadi tiga babak yang menggambarkan bagaimana waktu dan jarak perlahan-lahan merenggangkan hubungan manusia, meskipun perasaan di hati masih tersisa.
+            </p>
+        </section>
+
+        <section id="tokoh">
+            <h2>Tokoh Utama</h2>
+            <div class="characters-grid">
+                
+                <div class="char-card">
+                    <div class="char-img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Y0AqKJBrYRWmoDc_vPYFpWVKkuC2twaj4Q&s.jpg" alt="Takaki Toono">
+                    </div>
+                    <div class="char-info">
+                        <h3>Takaki Toono</h3>
+                        <p>Karakter utama yang terjebak dalam kenangan masa lalu dan sulit untuk beranjak maju.</p>
+                    </div>
+                </div>
+
+                <div class="char-card">
+                    <div class="char-img-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjK8vWPH3hIa9_Uayckzlkr3Uk7eIMBXtuyA&s.jpg" alt="Akari Shinohara">
+                    </div>
+                    <div class="char-info">
+                        <h3>Akari Shinohara</h3>
+                        <p>Cinta pertama Takaki yang menjadi alasan di balik surat-surat yang tak pernah terkirim.</p>
+                    </div>
+                </div>
+
+                <div class="char-card">
+                    <div class="char-img-container">
+                        <img src="https://w0.peakpx.com/wallpaper/199/148/HD-wallpaper-kanae-sumida-5-centimeters-per-second-horizon-surfing.jpg" alt="Kanae Sumida">
+                    </div>
+                    <div class="char-info">
+                        <h3>Kanae Sumida</h3>
+                        <p>Gadis yang mencintai Takaki di masa SMA, namun menyadari bahwa Takaki selalu menatap sesuatu yang jauh.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Daniel Prasetyo Deswanto - Tugas Dedicated Server XII TKJ D</p>
+        </footer>
     </div>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Profil & Materi Hosting. Dibuat dengan ❤️ untuk pembelajaran.</p>
-        </div>
-    </footer>
-    
-    <script>
-        // Fungsi untuk toggle konten
-        function toggleContent(id) {
-            const content = document.getElementById(id);
-            content.classList.toggle('active');
-            
-            // Mengubah teks tombol
-            const button = content.previousElementSibling.querySelector('.action-btn');
-            if (content.classList.contains('active')) {
-                button.textContent = 'Tutup';
-            } else {
-                button.textContent = 'Baca';
-            }
-        }
-        
-        // Fungsi untuk upload foto
-        document.getElementById('uploadBtn').addEventListener('click', function() {
-            document.getElementById('photoUpload').click();
-        });
-        
-        document.getElementById('photoUpload').addEventListener('change', function(e) {
-            if (e.target.files && e.target.files[0]) {
-                const reader = new FileReader();
-                
-                reader.onload = function(e) {
-                    document.getElementById('profilePhoto').src = e.target.result;
-                }
-                
-                reader.readAsDataURL(e.target.files[0]);
-            }
-        });
-        
-        // Membuka konten pertama secara default
-        document.addEventListener('DOMContentLoaded', function() {
-            toggleContent('pengantar');
-        });
-    </script>
+
 </body>
 </html>
